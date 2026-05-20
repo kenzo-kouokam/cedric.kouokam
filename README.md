@@ -170,11 +170,13 @@ eZdia est une société spécialisée en **optimisation de contenu e-commerce et
 
 <div align="center">
 
-| 📧 Email | 💼 LinkedIn | 💻 GitHub |
-|---|---|---|
-| [cedric-enzo.kouokam-kamhoua@epitech.eu](mailto:cedric-enzo.kouokam-kamhoua@epitech.eu) | [linkedin.com/in/enzo-kamhoua](https://www.linkedin.com/in/enzo-kamhoua/) | [github.com/kenzo-kouokam](https://github.com/kenzo-kouokam) |
+## 📋 Contact & Liens
 
-**📍 France · Permis B · Disponible en alternance (1j/4j) dès septembre 2026**
+📧 [cedric-enzo.kouokam-kamhoua@epitech.eu](mailto:cedric-enzo.kouokam-kamhoua@epitech.eu)  
+💼 [linkedin.com/in/enzo-kamhoua](https://www.linkedin.com/in/enzo-kamhoua/)  
+🖥️ [github.com/kenzo-kouokam](https://github.com/kenzo-kouokam)
+
+📍 France · Permis B · Disponible en alternance (1j/4j) dès septembre 2026
 
 </div>
 
