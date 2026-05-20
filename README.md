@@ -1,5 +1,3 @@
-# cedric.kouokam
-Portfolio Data Scientist
 
 #  Cedric Enzo  KOUOKAM KAMHOUA — Data Scientist Portfolio
 
@@ -7,9 +5,6 @@ Portfolio Data Scientist
 
 <b>Data Analyst · Data Scientist · Master Data Science & BI @ Epitech </b>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Enzo_Kouokam-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/enzo-kamhoua/)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-01696f?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cedric-enzo.kouokam-kamhoua@epitech.eu)
-[![GitHub](https://img.shields.io/badge/GitHub-kenzo--kouokam-171515?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kenzo-kouokam)
 
 > *Étudiant en Master Data Science & Business Intelligence à Epitech — Disponible en alternance (1j/4j) dès septembre 2026*
 
