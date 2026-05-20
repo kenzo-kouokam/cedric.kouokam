@@ -1,14 +1,11 @@
 
-#  Cedric Enzo  KOUOKAM KAMHOUA    — Data Scientist Portfolio — 
+#  Cedric Enzo  KOUOKAM KAMHOUA   
 
-<div align="center">
+**Data Scientist · Master Data Science & BI @ Epitech**
 
-<b>Data Analyst · Data Scientist · Master Data Science & BI @ Epitech </b>
+[LinkedIn](https://www.linkedin.com/in/enzo-kamhoua/) · [GitHub](https://github.com/kenzo-kouokam) · [Email](mailto:cedric-enzo.kouokam-kamhoua@epitech.eu)
 
-
-> *Étudiant en Master Data Science & Business Intelligence à Epitech — Disponible en alternance (1j/4j) dès septembre 2026*
-
-</div>
+> *Disponible en alternance (1j/4j) dès septembre 2026*
 
 ---
 
