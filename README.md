@@ -174,7 +174,7 @@ eZdia est une société spécialisée en **optimisation de contenu e-commerce et
 
 🖥️ [github.com/kenzo-kouokam](https://github.com/kenzo-kouokam)
 
-📍 France  · Permis B · Disponible en alternance (1j/4j) dès septembre 2026
+📍 France   ·  🚘 Permis B · Disponible en alternance (1j/4j) dès septembre 2026
 
 ---
 
