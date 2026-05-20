@@ -212,3 +212,25 @@ body {
   .main-content table th,
   .main-content table td { padding: 0.5rem 0.6rem !important; }
 }
+
+/* ---- PHOTO DE PROFIL DANS LE HEADER ---- */
+.page-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.page-header::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url('../img/picture.jpg');
+  background-size: cover;
+  background-position: center top;
+  border: 3px solid var(--teal);
+  box-shadow: 0 0 0 4px rgba(1,105,111,0.2);
+  margin-bottom: 1rem;
+  order: -1;
+}
