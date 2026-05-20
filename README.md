@@ -1,6 +1,5 @@
 
-#  Cedric Enzo  KOUOKAM KAMHOUA 
-#  — Data Scientist Portfolio — 
+#  Cedric Enzo  KOUOKAM KAMHOUA </n>  — Data Scientist Portfolio — 
 
 <div align="center">
 
