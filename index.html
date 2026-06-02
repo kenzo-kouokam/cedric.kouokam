@@ -1,1492 +1,585 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio Data Science & Business Intelligence — Cedric Enzo KOUOKAM | Machine Learning · Python · SQL · NLP · Power BI" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Data Science — Enzo Kouokam | Machine Learning · Python · SQL · Power BI">
+  <meta property="og:title" content="Enzo Kouokam — Data Scientist">
+  <meta property="og:description" content="Portfolio Data Science & Business Intelligence | ML · Python · SQL · Power BI">
   <title>Enzo Kouokam — Data Scientist</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <style>
-    /* =============================================
-       VARIABLES & RESET
-    ============================================= */
-    :root {
-      --bg:          #0d1117;
-      --surface:     #161b22;
-      --surface-2:   #21262d;
-      --border:      #30363d;
-      --teal:        #01696f;
-      --teal-light:  #4f98a3;
-      --teal-glow:   rgba(1,105,111,0.15);
-      --accent:      #58a6ff;
-      --accent-2:    #3fb950;
-      --text:        #e6edf3;
-      --text-muted:  #8b949e;
-      --text-faint:  #484f58;
-      --radius:      12px;
-      --transition:  0.25s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    a { color: var(--teal-light); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: #7fd1d8; }
-
-    img { max-width: 100%; display: block; }
-
-    /* =============================================
-       SCROLLBAR
-    ============================================= */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
-
-    /* =============================================
-       NAV
-    ============================================= */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(13,17,23,0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-weight: 700; font-size: 1rem;
-      color: var(--text) !important;
-      display: flex; align-items: center; gap: 10px;
-    }
-
-    .nav-logo-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--teal-light);
-      box-shadow: 0 0 8px var(--teal-light);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    .nav-links {
-      display: flex; align-items: center; gap: 0.2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted) !important;
-      font-size: 0.875rem; font-weight: 500;
-      padding: 0.4rem 0.75rem; border-radius: 6px;
-      transition: all var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--text) !important;
-      background: var(--surface-2);
-    }
-
-    .nav-cta {
-      background: var(--teal) !important;
-      color: #fff !important;
-      padding: 0.4rem 1rem !important;
-      border-radius: 6px !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--teal-light) !important;
-      color: #fff !important;
-    }
-
-    /* =============================================
-       HERO
-    ============================================= */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: 80px 2rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(1,105,111,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(88,166,255,0.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    /* Grid dots background */
-    #hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 32px 32px;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative; z-index: 1;
-      text-align: center;
-      max-width: 740px;
-    }
-
-    .hero-photo {
-      width: 130px; height: 130px;
-      border-radius: 50%;
-      border: 3px solid var(--teal);
-      box-shadow: 0 0 0 6px rgba(1,105,111,0.15), 0 16px 40px rgba(0,0,0,0.4);
-      object-fit: cover; object-position: top;
-      margin: 0 auto 1.5rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .hero-photo:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 0 8px rgba(1,105,111,0.2), 0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(63,185,80,0.1);
-      border: 1px solid rgba(63,185,80,0.3);
-      color: var(--accent-2);
-      font-size: 0.78rem; font-weight: 500;
-      padding: 0.3rem 0.9rem; border-radius: 20px;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-badge-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent-2);
-      animation: pulse 2s infinite;
-    }
-
-    .hero-name {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-name span { color: var(--teal-light); }
-
-    .hero-title {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-      font-weight: 400;
-    }
-
-    .hero-school {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.85rem; color: var(--text-faint);
-      margin-bottom: 2rem;
-    }
-
-    .hero-school::before {
-      content: '🎓';
-    }
-
-    .hero-ctas {
-      display: flex; flex-wrap: wrap; gap: 0.75rem;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 0.6rem 1.4rem; border-radius: 8px;
-      font-size: 0.875rem; font-weight: 600;
-      transition: all var(--transition); cursor: pointer;
-      border: none; font-family: inherit;
-    }
-
-    .btn-primary {
-      background: var(--teal);
-      color: #fff !important;
-    }
-
-    .btn-primary:hover {
-      background: var(--teal-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(1,105,111,0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted) !important;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--teal-light);
-      color: var(--teal-light) !important;
-      transform: translateY(-2px);
-    }
-
-    .hero-stats {
-      display: flex; justify-content: center; gap: 2.5rem;
-      margin-top: 3rem; padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .hero-stat { text-align: center; }
-
-    .hero-stat-value {
-      font-size: 1.8rem; font-weight: 700;
-      color: var(--teal-light);
-      display: block; line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 0.75rem; color: var(--text-faint);
-      margin-top: 0.3rem; text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    /* =============================================
-       SECTIONS COMMUNES
-    ============================================= */
-    section {
-      padding: 5rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; color: var(--teal-light);
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700; color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-sub {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 580px;
-      margin-bottom: 3rem;
-    }
-
-    /* =============================================
-       PROFIL
-    ============================================= */
-    #profil {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    #profil > div {
-      max-width: 1100px; margin: 0 auto;
-      padding: 5rem 2rem;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-    }
-
-    .profil-text p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-size: 0.97rem;
-    }
-
-    .profil-text p strong { color: var(--text); }
-
-    .profil-highlights {
-      display: flex; flex-direction: column; gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .highlight-item {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      padding: 1rem; border-radius: var(--radius);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      transition: border-color var(--transition);
-    }
-
-    .highlight-item:hover { border-color: var(--teal); }
-
-    .highlight-icon {
-      font-size: 1.3rem; flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .highlight-item h4 {
-      font-size: 0.9rem; font-weight: 600;
-      color: var(--text); margin-bottom: 0.2rem;
-    }
-
-    .highlight-item p {
-      font-size: 0.82rem; color: var(--text-muted) !important;
-      margin: 0 !important;
-    }
-
-    /* =============================================
-       PROJETS
-    ============================================= */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-      display: flex; flex-direction: column;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--teal);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(1,105,111,0.2);
-    }
-
-    .project-img-wrap {
-      position: relative;
-      height: 180px;
-      overflow: hidden;
-      background: var(--surface-2);
-    }
-
-    .project-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover .project-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .project-img-fallback {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3rem; color: var(--text-faint);
-      background: linear-gradient(135deg, var(--surface-2), var(--bg));
-    }
-
-    .project-number {
-      position: absolute; top: 12px; left: 12px;
-      background: rgba(13,17,23,0.85);
-      backdrop-filter: blur(6px);
-      border: 1px solid var(--border);
-      color: var(--teal-light);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem; font-weight: 500;
-      padding: 0.25rem 0.6rem; border-radius: 4px;
-    }
-
-    .project-body {
-      padding: 1.25rem 1.25rem 1rem;
-      flex: 1; display: flex; flex-direction: column;
-    }
-
-    .project-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      padding: 0.2rem 0.55rem; border-radius: 4px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .tag-hl {
-      background: rgba(1,105,111,0.12);
-      border-color: rgba(1,105,111,0.35);
-      color: var(--teal-light);
-    }
-
-    .project-title {
-      font-size: 1.05rem; font-weight: 700;
-      color: #fff; margin-bottom: 0.5rem;
-      line-height: 1.3;
-    }
-
-    .project-context {
-      font-size: 0.82rem; color: var(--text-muted);
-      margin-bottom: 0.9rem;
-      padding: 0.6rem 0.75rem;
-      border-left: 2px solid var(--teal);
-      background: rgba(1,105,111,0.05);
-      border-radius: 0 6px 6px 0;
-    }
-
-    .project-desc {
-      list-style: none; margin-bottom: 1rem; flex: 1;
-    }
-
-    .project-desc li {
-      font-size: 0.83rem; color: var(--text-muted);
-      padding: 0.25rem 0 0.25rem 1.2rem;
-      position: relative; line-height: 1.5;
-    }
-
-    .project-desc li::before {
-      content: '▸'; color: var(--teal-light);
-      position: absolute; left: 0;
-    }
-
-    .project-desc strong { color: var(--text); }
-
-    .project-metrics {
-      display: flex; gap: 0.6rem; flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .metric {
-      display: flex; flex-direction: column;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.5rem 0.75rem;
-      flex: 1; min-width: 80px; text-align: center;
-    }
-
-    .metric-val {
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--teal-light); line-height: 1;
-    }
-
-    .metric-lbl {
-      font-size: 0.65rem; color: var(--text-faint);
-      margin-top: 0.25rem; text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .project-footer {
-      display: flex; gap: 0.6rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .project-footer a {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 0.8rem; font-weight: 600;
-      padding: 0.45rem 0.9rem; border-radius: 6px;
-      transition: all var(--transition);
-    }
-
-    .btn-gh {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text-muted) !important;
-      flex: 1; justify-content: center;
-    }
-
-    .btn-gh:hover {
-      border-color: var(--teal-light);
-      color: var(--teal-light) !important;
-    }
-
-    /* =============================================
-       EXPÉRIENCES (TIMELINE)
-    ============================================= */
-    #experiences { position: relative; }
-
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: 8px; bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--teal), transparent);
-      border-radius: 1px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 0 0 2.5rem 2rem;
-    }
-
-    .timeline-dot {
-      position: absolute; left: -2rem;
-      top: 6px;
-      transform: translateX(-50%);
-      width: 14px; height: 14px; border-radius: 50%;
-      background: var(--teal);
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--teal);
-      transition: all var(--transition);
-    }
-
-    .timeline-item:hover .timeline-dot {
-      background: var(--teal-light);
-      box-shadow: 0 0 0 2px var(--teal-light), 0 0 12px rgba(79,152,163,0.4);
-    }
-
-    .timeline-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .timeline-item:hover .timeline-card {
-      border-color: var(--teal);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
-
-    .timeline-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 1rem;
-      margin-bottom: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .timeline-company {
-      font-size: 1rem; font-weight: 700; color: #fff;
-    }
-
-    .timeline-period {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; color: var(--text-faint);
-      white-space: nowrap;
-      background: var(--surface-2);
-      padding: 0.2rem 0.6rem; border-radius: 4px;
-      border: 1px solid var(--border);
-    }
-
-    .timeline-role {
-      font-size: 0.88rem; color: var(--teal-light);
-      font-weight: 500; margin-bottom: 0.75rem;
-    }
-
-    .timeline-desc {
-      list-style: none;
-    }
-
-    .timeline-desc li {
-      font-size: 0.84rem; color: var(--text-muted);
-      padding: 0.3rem 0 0.3rem 1.3rem;
-      position: relative; line-height: 1.5;
-    }
-
-    .timeline-desc li::before {
-      content: '▸'; color: var(--teal);
-      position: absolute; left: 0;
-    }
-
-    .timeline-desc strong { color: var(--text); }
-
-    .timeline-tags {
-      display: flex; flex-wrap: wrap; gap: 0.35rem;
-      margin-top: 0.75rem;
-    }
-
-    /* =============================================
-       COMPÉTENCES
-    ============================================= */
-    #competences { background: var(--surface); }
-
-    #competences > .inner {
-      max-width: 1100px; margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .skill-cat {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      transition: border-color var(--transition);
-    }
-
-    .skill-cat:hover { border-color: var(--teal); }
-
-    .skill-cat-title {
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--teal-light);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-items {
-      display: flex; flex-wrap: wrap; gap: 0.45rem;
-    }
-
-    .skill-chip {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.78rem; font-weight: 500;
-      padding: 0.3rem 0.65rem; border-radius: 6px;
-      transition: all var(--transition);
-    }
-
-    .skill-chip:hover {
-      border-color: var(--teal-light);
-      color: var(--text);
-    }
-
-    .skill-chip.hl {
-      background: rgba(1,105,111,0.1);
-      border-color: rgba(1,105,111,0.3);
-      color: var(--teal-light);
-    }
-
-    .skill-dot {
-      width: 5px; height: 5px; border-radius: 50%;
-      background: currentColor; flex-shrink: 0;
-    }
-
-    /* =============================================
-       FORMATION & CERTIFS
-    ============================================= */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .edu-block h3 {
-      font-size: 0.9rem; font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .edu-item {
-      padding: 0.9rem; border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      margin-bottom: 0.75rem;
-      transition: border-color var(--transition);
-    }
-
-    .edu-item:hover { border-color: var(--teal); }
-
-    .edu-degree {
-      font-size: 0.9rem; font-weight: 600; color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-
-    .edu-school {
-      font-size: 0.8rem; color: var(--teal-light);
-      margin-bottom: 0.2rem;
-    }
-
-    .edu-period {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem; color: var(--text-faint);
-    }
-
-    .cert-item {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 0.8rem; border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      margin-bottom: 0.6rem;
-      transition: border-color var(--transition);
-    }
-
-    .cert-item:hover { border-color: var(--teal); }
-
-    .cert-badge {
-      font-size: 1.4rem; flex-shrink: 0;
-    }
-
-    .cert-name {
-      font-size: 0.87rem; font-weight: 600; color: var(--text);
-    }
-
-    .cert-org {
-      font-size: 0.76rem; color: var(--text-faint);
-    }
-
-    /* =============================================
-       CONTACT
-    ============================================= */
-    #contact {
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-links {
-      display: flex; flex-wrap: wrap; gap: 1rem;
-      justify-content: center; margin-top: 2rem;
-    }
-
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 0.75rem 1.5rem; border-radius: 10px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text-muted) !important;
-      font-size: 0.875rem; font-weight: 500;
-      transition: all var(--transition);
-    }
-
-    .contact-link:hover {
-      border-color: var(--teal);
-      color: var(--teal-light) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
-
-    .contact-link svg { flex-shrink: 0; }
-
-    .contact-location {
-      margin-top: 1.5rem;
-      font-size: 0.82rem; color: var(--text-faint);
-    }
-
-    /* =============================================
-       FOOTER
-    ============================================= */
-    footer {
-      text-align: center;
-      padding: 1.5rem 2rem;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      font-size: 0.78rem; color: var(--text-faint);
-    }
-
-    footer span { color: var(--teal-light); }
-
-    /* =============================================
-       DIVIDER
-    ============================================= */
-    .section-divider {
-      max-width: 1100px; margin: 0 auto;
-      height: 1px; background: var(--border);
-    }
-
-    /* =============================================
-       RESPONSIVE
-    ============================================= */
-    @media (max-width: 768px) {
-      #profil > div { grid-template-columns: 1fr; gap: 2rem; }
-      .edu-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 1.5rem; }
-      .nav-links { display: none; }
-      .timeline { padding-left: 1.5rem; }
-      .timeline-item { padding-left: 1.5rem; }
-      .timeline-dot { left: -1.5rem; }
-    }
-
-    /* =============================================
-       ANIMATIONS
-    ============================================= */
-    .fade-in {
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.6s ease forwards;
-    }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: none; }
-    }
-
-    .fade-in:nth-child(1) { animation-delay: 0.1s; }
-    .fade-in:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in:nth-child(3) { animation-delay: 0.3s; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- AOS animations -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
 
-  <!-- ==================== NAV ==================== -->
-  <nav>
-    <a class="nav-logo" href="#hero">
-      <span class="nav-logo-dot"></span>
-      Enzo Kouokam
+<!-- ═══════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-bracket">[</span>enzo.ds<span class="logo-bracket">]</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#experiences">Expériences</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#formation">Formation</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Profil</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#skills">Stack</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
-  </nav>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- ==================== HERO ==================== -->
-  <section id="hero">
-    <div class="hero-inner">
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
 
-      <img
-        class="hero-photo"
-        src="./img/picture.jpg"
-        alt="Cedric Enzo Kouokam"
-        onerror="this.style.display='none'"
-      />
-
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Recherche une alternance — (1j/4j) dès septembre 2026
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+        <span class="badge-dot"></span>
+        Disponible en alternance · 1j/4j · Sept. 2026
       </div>
 
-      <h1 class="hero-name">
-        Cedric Enzo <span>KOUOKAM</span>
+      <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">
+        Cedric Enzo<br>
+        <span class="gradient-text">Kouokam</span>
       </h1>
 
-      <p class="hero-title">
-        Data Scientist &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; Business Intelligence
-      </p>
-
-      <p class="hero-school">
-        Master Data Science & Business Intelligence — Epitech Toulouse
-      </p>
-
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#projets">Voir mes projets ↓</a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/enzo-kamhoua/" target="_blank" rel="noopener">
-          <!-- LinkedIn SVG -->
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn btn-outline" href="https://github.com/kenzo-kouokam" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <!-- ⚠️ Remplacer href="#" par l'URL de votre CV hébergé (Google Drive, Notion, etc.) -->
-        <a class="btn btn-outline" href="https://github.com/kenzo-kouokam/cedric.kouokam/blob/main/img/Enzo_KOUOKAM.pdf" target="_blank" rel="noopener">
-          📄 Télécharger CV
-        </a>
+      <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="350">
+        <span class="typed-prefix">$ </span><span id="typed"></span>
       </div>
 
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-value">3</span>
-          <span class="hero-stat-label">Projets ML/NLP</span>
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="450">
+        Parcours hybride <strong>Génie Logiciel → Data Science</strong>.<br>
+        Je transforme des datasets bruts en décisions business mesurables.
+      </p>
+
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="550">
+        <div class="stat">
+          <span class="stat-num">80k+</span>
+          <span class="stat-label">lignes analysées</span>
         </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">650k+</span>
-          <span class="hero-stat-label">Lignes traitées</span>
+        <div class="stat">
+          <span class="stat-num">0.76</span>
+          <span class="stat-label">meilleur AUC</span>
         </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">3 ans</span>
-          <span class="hero-stat-label">Expérience data</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">4</span>
-          <span class="hero-stat-label">Certifications</span>
+        <div class="stat">
+          <span class="stat-num">×20</span>
+          <span class="stat-label">engagement growth</span>
         </div>
       </div>
 
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="650">
+        <a href="#projects" class="btn-primary">Voir mes projets</a>
+        <a href="https://www.linkedin.com/in/enzo-kamhoua/" target="_blank" rel="noopener" class="btn-secondary">
+          LinkedIn →
+        </a>
+      </div>
     </div>
-  </section>
 
-  <!-- ==================== PROFIL ==================== -->
-  <div id="profil">
-    <div>
-      <div class="profil-text">
-        <span class="section-tag">// profil</span>
-        <h2 class="section-title">Parcours hybride<br>orienté impact métier</h2>
-        <p>
-          Issu d'un parcours <strong>Génie Logiciel → Data Science</strong>, j'allie une
-          solide base technique à une vision orientée décision business. Je ne construis
-          pas seulement des modèles : je traduis les données en insights actionnables.
-        </p>
-        <p>
-          Mon expérience terrain chez <strong>eZdia Inc. (USA)</strong> m'a permis de
-          travailler concrètement sur la <strong>détection d'anomalies ML</strong> et la
-          recatégorisation de catalogues produits à grande échelle — directement en phase
-          avec mes projets académiques actuels.
-        </p>
-        <p>
-          En Master <strong>Data Science & BI à Epitech</strong>, je développe des
-          pipelines ML end-to-end sur des données réelles : prédiction, NLP, clustering,
-          label noise. Chaque projet répond à une question métier concrète.
-        </p>
-      </div>
-
-      <div class="profil-highlights">
-        <div class="highlight-item">
-          <div class="highlight-icon">🔬</div>
-          <div>
-            <h4>Data Scientist orienté résultats</h4>
-            <p>XGBoost, Logistic Regression, K-Means, SVM, TF-IDF — sur des datasets réels 80k–525k lignes</p>
-          </div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🏷️</div>
-          <div>
-            <h4>NLP & Qualité de données</h4>
-            <p>Label noise detection (Confident Learning / cleanlab), recatégorisation multi-classes, extraction regex</p>
-          </div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">📊</div>
-          <div>
-            <h4>Business Intelligence & Analyse</h4>
-            <p>Power BI, dashboards de performance, KPIs, reporting marketing — 5 marques suivies simultanément</p>
-          </div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">⚙️</div>
-          <div>
-            <h4>Expertise marketplace e-commerce</h4>
-            <p>2 ans chez eZdia (Amazon) + Projet 3 : pipeline ML de recatégorisation de 525k produits</p>
-          </div>
+    <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+      <div class="photo-wrapper">
+        <div class="photo-ring"></div>
+        <img src="img/picture.jpg" alt="Enzo Kouokam — Data Scientist" class="hero-photo">
+        <div class="photo-badge">
+          <span>Master DS & BI</span>
+          <small>Epitech · 2025–2027</small>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==================== PROJETS ==================== -->
-  <section id="projets">
-    <span class="section-tag">// projets</span>
-    <h2 class="section-title">Projets Data Science</h2>
-    <p class="section-sub">
-      Trois projets end-to-end sur données réelles, chacun répondant à une problématique métier concrète.
-    </p>
+  <a href="#about" class="scroll-hint" aria-label="Défiler vers le bas">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TECH BAND
+═══════════════════════════════════════ -->
+<div class="tech-band" aria-hidden="true">
+  <div class="tech-band-track">
+    <div class="tech-band-inner">
+      <span>Python</span><span class="sep">✦</span>
+      <span>scikit-learn</span><span class="sep">✦</span>
+      <span>XGBoost</span><span class="sep">✦</span>
+      <span>Pandas</span><span class="sep">✦</span>
+      <span>NumPy</span><span class="sep">✦</span>
+      <span>SQL</span><span class="sep">✦</span>
+      <span>Power BI</span><span class="sep">✦</span>
+      <span>NLP</span><span class="sep">✦</span>
+      <span>Machine Learning</span><span class="sep">✦</span>
+      <span>SMOTE</span><span class="sep">✦</span>
+      <span>K-Means</span><span class="sep">✦</span>
+      <span>Random Forest</span><span class="sep">✦</span>
+      <span>Matplotlib</span><span class="sep">✦</span>
+      <span>Seaborn</span><span class="sep">✦</span>
+      <span>Jupyter</span><span class="sep">✦</span>
+      <span>Git</span><span class="sep">✦</span>
+      <span>GitHub</span><span class="sep">✦</span>
+      <span>Google Analytics</span><span class="sep">✦</span>
+    </div>
+    <div class="tech-band-inner">
+      <span>Python</span><span class="sep">✦</span>
+      <span>scikit-learn</span><span class="sep">✦</span>
+      <span>XGBoost</span><span class="sep">✦</span>
+      <span>Pandas</span><span class="sep">✦</span>
+      <span>NumPy</span><span class="sep">✦</span>
+      <span>SQL</span><span class="sep">✦</span>
+      <span>Power BI</span><span class="sep">✦</span>
+      <span>NLP</span><span class="sep">✦</span>
+      <span>Machine Learning</span><span class="sep">✦</span>
+      <span>SMOTE</span><span class="sep">✦</span>
+      <span>K-Means</span><span class="sep">✦</span>
+      <span>Random Forest</span><span class="sep">✦</span>
+      <span>Matplotlib</span><span class="sep">✦</span>
+      <span>Seaborn</span><span class="sep">✦</span>
+      <span>Jupyter</span><span class="sep">✦</span>
+      <span>Git</span><span class="sep">✦</span>
+      <span>GitHub</span><span class="sep">✦</span>
+      <span>Google Analytics</span><span class="sep">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════ -->
+<section id="about" class="section about">
+  <div class="container">
+    <div class="section-tag" data-aos="fade-right">// profil</div>
+    <h2 class="section-title" data-aos="fade-up">Data Scientist<br><span class="gradient-text">orienté résultats</span></h2>
+
+    <div class="about-grid">
+      <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+        <p>Parcours hybride <strong>Génie Logiciel → Data Science</strong>, je maîtrise l'ensemble de la chaîne data : de la collecte et du nettoyage jusqu'à la modélisation ML et la restitution en dashboard.</p>
+        <p>Je construis des solutions à forte valeur métier — des pipelines ML sur datasets réels aux recommandations business concrètes basées sur les données.</p>
+        <div class="about-meta">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>France · Permis B</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🎓</span>
+            <span>Master DS & BI — Epitech France</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">💼</span>
+            <span>Alternance 1j/4j · disponible dès sept. 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">📧</span>
+            <a href="mailto:cedric-enzo.kouokam-kamhoua@epitech.eu" class="meta-link">cedric-enzo.kouokam-kamhoua@epitech.eu</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-certifs" data-aos="fade-left" data-aos-delay="200">
+        <div class="certif-title">Certifications récentes</div>
+        <div class="certif-list">
+          <div class="certif-item">
+            <div class="certif-logo" style="background:#054ada">IBM</div>
+            <div>
+              <div class="certif-name">Python for Data Science, AI & Development</div>
+              <div class="certif-date">IBM · Mai 2026</div>
+            </div>
+          </div>
+          <div class="certif-item">
+            <div class="certif-logo" style="background:#4285f4">G</div>
+            <div>
+              <div class="certif-name">Google Data Analytics</div>
+              <div class="certif-date">Google · Mai 2026</div>
+            </div>
+          </div>
+          <div class="certif-item">
+            <div class="certif-logo" style="background:#20beff">K</div>
+            <div>
+              <div class="certif-name">Data Visualization + Python</div>
+              <div class="certif-date">Kaggle · Mai 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROJECTS
+═══════════════════════════════════════ -->
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-tag" data-aos="fade-right">// projets</div>
+    <h2 class="section-title" data-aos="fade-up">Projets<br><span class="gradient-text">Data Science</span></h2>
 
     <div class="projects-grid">
 
-      <!-- PROJET 1 : Vélo -->
-      <article class="project-card fade-in">
-        <div class="project-img-wrap">
-          <span class="project-number">Projet 01</span>
-          <img
-            src="https://raw.githubusercontent.com/kenzo-kouokam/accidents-velo-prediction/main/img/07-ml-courbes_ROC.png"
-            alt="Courbes ROC — Prédiction accidents vélo"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="project-img-fallback" style="display:none;">🚲</div>
+      <!-- Projet 1 -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <a href="https://github.com/kenzo-kouokam/accidents-velo-prediction" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
         </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="tag tag-hl">XGBoost</span>
-            <span class="tag tag-hl">SMOTE</span>
-            <span class="tag">Random Forest</span>
-            <span class="tag">SVM</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">data.gouv.fr</span>
-          </div>
-          <h3 class="project-title">Prédiction du risque d'accident grave de vélo</h3>
-          <p class="project-context">
-            Sécurité routière publique — identification des contextes à risque pour prioriser les actions de prévention.
-          </p>
-          <ul class="project-desc">
-            <li>Pipeline ML complet sur <strong>80 022 accidents cyclistes</strong> France 2005–2023 (data.gouv.fr)</li>
-            <li>Construit <strong>11 variables métier</strong> : <code>nuit_sans_eclairage</code> (63% graves), <code>hors_agglo_nuit</code>, <code>heure_pointe</code></li>
-            <li>Géré le déséquilibre de classes via <strong>SMOTE</strong> (+23% d'observations synthétiques)</li>
-            <li>Comparé 4 modèles sur Recall, F1-score et ROC AUC</li>
-            <li>Facteurs de risque identifiés : type de route (Chi²=2569), hors-agglomération (Chi²=2335)</li>
-          </ul>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-val">80k</span>
-              <span class="metric-lbl">accidents</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">4</span>
-              <span class="metric-lbl">modèles</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">11</span>
-              <span class="metric-lbl">features métier</span>
-            </div>
-          </div>
-          <div class="project-footer">
-            <a class="btn-gh" href="https://github.com/kenzo-kouokam/accidents-velo-prediction" target="_blank" rel="noopener">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Voir sur GitHub
-            </a>
-          </div>
+        <h3 class="project-title">Prédiction gravité accidents vélo</h3>
+        <p class="project-desc">Analyse de <strong>80 022 accidents cyclistes</strong> (France 2005–2023). Construction de 11 variables métier, gestion du déséquilibre via SMOTE, comparaison de 4 modèles de classification.</p>
+        <div class="project-metrics">
+          <span class="metric">80k+ lignes</span>
+          <span class="metric">SMOTE +23%</span>
+          <span class="metric">Chi²=2569</span>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">SMOTE</span>
         </div>
       </article>
 
-      <!-- PROJET 2 : Bank Marketing -->
-      <article class="project-card fade-in">
-        <div class="project-img-wrap">
-          <span class="project-number">Projet 02</span>
-          <img
-            src="https://raw.githubusercontent.com/kenzo-kouokam/bank-marketing-ml/main/img/09-clustering-knn.png"
-            alt="Clustering K-Means — Campagne marketing bancaire"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="project-img-fallback" style="display:none;">🏦</div>
+      <!-- Projet 2 (featured) -->
+      <article class="project-card featured" data-aos="fade-up" data-aos-delay="200">
+        <div class="featured-badge">Best AUC</div>
+        <div class="project-header">
+          <div class="project-icon">🏦</div>
+          <a href="https://github.com/kenzo-kouokam/bank-marketing-ml" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
         </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="tag tag-hl">XGBoost</span>
-            <span class="tag tag-hl">K-Means</span>
-            <span class="tag">Logistic Regression</span>
-            <span class="tag">KNN</span>
-            <span class="tag">SMOTE</span>
-            <span class="tag">scikit-learn</span>
-          </div>
-          <h3 class="project-title">Prédiction du succès d'une campagne marketing bancaire</h3>
-          <p class="project-context">
-            Optimisation du ciblage d'une campagne téléphonique bancaire pour maximiser le ROI — 45 211 clients.
-          </p>
-          <ul class="project-desc">
-            <li>EDA complète + traitement du <strong>déséquilibre de classes</strong> (11,7% de souscriptions) via SMOTE</li>
-            <li>Comparé 4 modèles de classification — <strong>XGBoost retenu (AUC 0,76)</strong></li>
-            <li>Analyse du <strong>seuil de décision</strong> : trade-off précision/rappel selon objectif marketing</li>
-            <li>Segmentation <strong>K-Means k=3</strong> : cluster prioritaire à <strong>19% de conversion</strong> (×2 la moyenne)</li>
-            <li>Recommandations business : ciblage par historique de contact et canal de communication</li>
-          </ul>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-val">0.76</span>
-              <span class="metric-lbl">AUC XGBoost</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">19%</span>
-              <span class="metric-lbl">conversion cluster</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">45k</span>
-              <span class="metric-lbl">clients</span>
-            </div>
-          </div>
-          <div class="project-footer">
-            <a class="btn-gh" href="https://github.com/kenzo-kouokam/bank-marketing-ml" target="_blank" rel="noopener">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Voir sur GitHub
-            </a>
-          </div>
+        <h3 class="project-title">Modélisation prédictive — Campagne marketing bancaire</h3>
+        <p class="project-desc">Optimisation du ciblage d'une campagne téléphonique bancaire sur <strong>45 211 clients</strong>. Segmentation K-Means : cluster prioritaire à 19% de conversion (×2 la moyenne).</p>
+        <div class="project-metrics">
+          <span class="metric highlight">AUC 0.76</span>
+          <span class="metric">45k clients</span>
+          <span class="metric">×2 conversion</span>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">K-Means</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">Random Forest</span>
         </div>
       </article>
 
-      <!-- PROJET 3 : Ecommerce -->
-      <article class="project-card fade-in">
-        <div class="project-img-wrap">
-          <span class="project-number">Projet 03</span>
-          <img
-            src="https://raw.githubusercontent.com/kenzo-kouokam/Ecommerce_Categorisation_Dimensions_Couleurs/main/img/06-label-noise-cleanlab.png"
-            alt="Label Noise — Marketplace e-commerce"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="project-img-fallback" style="display:none;">🛋️</div>
+      <!-- Projet 3 -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-header">
+          <div class="project-icon">🛋️</div>
+          <a href="https://github.com/kenzo-kouokam/Ecommerce_Categorisation_Dimensions_Couleurs" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
         </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="tag tag-hl">cleanlab</span>
-            <span class="tag tag-hl">NLP / TF-IDF</span>
-            <span class="tag">Label Noise</span>
-            <span class="tag">LinearSVC</span>
-            <span class="tag">Regex</span>
-            <span class="tag">525k lignes</span>
-          </div>
-          <h3 class="project-title">Détection de label noise & recatégorisation produits marketplace</h3>
-          <p class="project-context">
-            Contrôle qualité catalogue ameublement — 525 000 lignes de ventes, erreurs de catégorisation vendeurs tiers.
-          </p>
-          <ul class="project-desc">
-            <li>Identifié et résolu le <strong>biais de confirmation</strong> : les modèles entraînés sur données bruitées valident les erreurs existantes</li>
-            <li>Déployé le <strong>Confident Learning (cleanlab)</strong> pour nettoyer la vérité terrain avant entraînement</li>
-            <li>Pipeline <strong>TF-IDF + Logistic Regression</strong> : F1 macro ~0,82 sur 500+ catégories</li>
-            <li>Extracteur regex de <strong>dimensions</strong> (<code>140*190</code>) et <strong>couleurs</strong> depuis les libellés</li>
-            <li>Livrable : scoring de confiance + statuts <em>OK / Recatégorisation proposée / À vérifier</em></li>
-          </ul>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-val">525k</span>
-              <span class="metric-lbl">lignes</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">0.82</span>
-              <span class="metric-lbl">F1 macro</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">500+</span>
-              <span class="metric-lbl">catégories</span>
-            </div>
-          </div>
-          <div class="project-footer">
-            <a class="btn-gh" href="https://github.com/kenzo-kouokam/Ecommerce_Categorisation_Dimensions_Couleurs" target="_blank" rel="noopener">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Voir sur GitHub
-            </a>
-          </div>
+        <h3 class="project-title">Label noise & recatégorisation e-commerce NLP</h3>
+        <p class="project-desc">Pipeline NLP pour détecter et corriger des milliers de produits mal étiquetés sur une marketplace ameublement. Extraction automatique de dimensions et couleurs depuis les descriptions.</p>
+        <div class="project-metrics">
+          <span class="metric">NLP Pipeline</span>
+          <span class="metric">Regex</span>
+          <span class="metric">Multi-class</span>
+        </div>
+        <div class="project-tags">
+          <span class="tag">NLP</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">Regex</span>
+          <span class="tag">Python</span>
         </div>
       </article>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
-
-  <!-- ==================== EXPÉRIENCES ==================== -->
-  <section id="experiences">
-    <span class="section-tag">// expériences</span>
-    <h2 class="section-title">Parcours professionnel</h2>
-    <p class="section-sub">
-      Des expériences terrain en data, ML et marketing digital qui alimentent directement mes projets.
-    </p>
+<!-- ═══════════════════════════════════════
+     EXPERIENCE
+═══════════════════════════════════════ -->
+<section id="experience" class="section experience">
+  <div class="container">
+    <div class="section-tag" data-aos="fade-right">// expériences</div>
+    <h2 class="section-title" data-aos="fade-up">Parcours<br><span class="gradient-text">professionnel</span></h2>
 
     <div class="timeline">
 
-      <!-- eZdia -->
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
         <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-company">🇺🇸 eZdia Inc. — Fremont, California (USA)</div>
-              <div class="timeline-role">Freelance ML & Data Contributor — Marketplace Amazon</div>
-            </div>
-            <span class="timeline-period">Jun 2020 – Jun 2022</span>
-          </div>
-          <ul class="timeline-desc">
-            <li>Conçu et déployé le plugin <strong>CrewMachine</strong> de recatégorisation automatique de fiches produits Amazon — traitement de milliers de références selon des taxonomies à 3 niveaux (macro / catégorie / sous-catégorie)</li>
-            <li>Développé des <strong>modèles ML de détection d'anomalies</strong> (articles mal référencés ou mal catégorisés) intégrés dans un pipeline qualité à 2 niveaux : équipe L1 (correction) + contrôle qualité L2 sur <strong>20% de l'échantillon journalier</strong></li>
-            <li>Piloté le <strong>ré-entraînement itératif des modèles de classification</strong> pour améliorer la précision de détection à chaque cycle d'annotation</li>
-            <li>Refactorisé les critères descriptifs et bullet points produits pour optimiser le <strong>SEO marketplace</strong> et la cohérence taxonomique macro / catégorie principale</li>
+        <div class="timeline-content">
+          <div class="timeline-period">Freelance · Jan 2024 – Déc 2024</div>
+          <h3 class="timeline-role">Data & Performance Marketing Analyst</h3>
+          <div class="timeline-company">CORTEXPO</div>
+          <ul class="timeline-tasks">
+            <li>Analyse des données de performance marketing de 5 marques (Google Ads, Meta Ads, SEO)</li>
+            <li>Dashboards temps réel pour ajustement continu des campagnes</li>
+            <li>Reportings hebdomadaires multi-plateformes</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag tag-hl">ML Détection d'anomalies</span>
-            <span class="tag tag-hl">Recatégorisation</span>
-            <span class="tag">Amazon Marketplace</span>
-            <span class="tag">Pipeline Qualité</span>
-            <span class="tag">NLP</span>
-            <span class="tag">Taxonomie produit</span>
-          </div>
         </div>
       </div>
 
-      <!-- CORTEXPO -->
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="150">
         <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-company">📊 CORTEXPO</div>
-              <div class="timeline-role">Data & Performance Marketing Analyst</div>
-            </div>
-            <span class="timeline-period">Jan 2024 – Déc 2024</span>
-          </div>
-          <ul class="timeline-desc">
-            <li>Analysé et structuré les données de performance marketing de <strong>5 marques</strong> sur Google Ads, Meta Ads et SEO — volumétrie multi-sources</li>
-            <li>Construit des <strong>dashboards de suivi en temps réel</strong> pour piloter les ajustements de campagne avec agilité</li>
-            <li>Produit des <strong>reportings hebdomadaires</strong> : collecte, nettoyage et agrégation des données multi-plateformes</li>
+        <div class="timeline-content">
+          <div class="timeline-period">Sept 2023 – Déc 2025</div>
+          <h3 class="timeline-role">Développeur & Consultant Data Digital</h3>
+          <div class="timeline-company">Freelance</div>
+          <ul class="timeline-tasks">
+            <li>Tableaux de bord de performance (KPIs, taux de conversion, ROI) pour 3 clients</li>
+            <li>Analyse marketing multi-plateformes (Google Analytics, Meta Ads)</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">Google Ads</span>
-            <span class="tag">Meta Ads</span>
-            <span class="tag">SEO</span>
-            <span class="tag">Dashboards</span>
-            <span class="tag">Reporting</span>
-          </div>
         </div>
       </div>
 
-      <!-- Freelance -->
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
         <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-company">💻 Freelance — Consultant Data & Digital</div>
-              <div class="timeline-role">Développement de solutions data pour clients</div>
-            </div>
-            <span class="timeline-period">Sep 2023 – Déc 2025</span>
-          </div>
-          <ul class="timeline-desc">
-            <li>Conçu et déployé des <strong>tableaux de bord de performance</strong> (KPIs, taux de conversion, ROI) pour <strong>3 clients</strong></li>
-            <li>Piloté l'analyse des données marketing multi-plateformes : Google Analytics, Meta Ads, données CRM</li>
-            <li>Livré 3 missions complètes intégrant collecte, transformation et restitution de données de performance digitale</li>
+        <div class="timeline-content">
+          <div class="timeline-period">Sept 2022 – Déc 2023</div>
+          <h3 class="timeline-role">Spécialiste Data & Growth Digital</h3>
+          <div class="timeline-company">MYBOSA</div>
+          <ul class="timeline-tasks">
+            <li><strong>+213% croissance communauté, ×20 engagement</strong> multi-réseaux sociaux</li>
+            <li>Coordination d'une équipe internationale de 20 personnes (Maghreb / Afrique subsaharienne)</li>
+            <li>Analyse des données d'engagement pour orienter la ligne éditoriale</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">Google Analytics</span>
-            <span class="tag">KPIs</span>
-            <span class="tag">ROI</span>
-          </div>
         </div>
       </div>
 
-      <!-- MYBOSA -->
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="250">
         <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-company">📈 MYBOSA</div>
-              <div class="timeline-role">Spécialiste Data & Growth Digital</div>
-            </div>
-            <span class="timeline-period">Sep 2022 – Déc 2023</span>
-          </div>
-          <ul class="timeline-desc">
-            <li>Piloté la croissance communautaire via l'analyse data : <strong>+213% de croissance</strong>, <strong>×20 sur l'engagement</strong></li>
-            <li>Structuré et coordonné une <strong>équipe internationale de 20 personnes</strong> (Maghreb / Afrique subsaharienne)</li>
-            <li>Analysé les données d'engagement pour orienter la ligne éditoriale et maximiser la portée organique</li>
+        <div class="timeline-content">
+          <div class="timeline-period">Mars 2022 – Août 2022</div>
+          <h3 class="timeline-role">Développeur Frontend & Data Integration</h3>
+          <div class="timeline-company">SOLVEIL</div>
+          <ul class="timeline-tasks">
+            <li>Système d'information de gestion (équipe de 5) avec API REST (Laravel) + Angular</li>
+            <li>Intégration flux de données pour automatiser l'affichage d'indicateurs métier</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">Analyse d'engagement</span>
-            <span class="tag">Growth</span>
-            <span class="tag">KPIs</span>
-            <span class="tag">Management</span>
-          </div>
         </div>
       </div>
 
-      <!-- SOLVEIL -->
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
         <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-company">⚙️ SOLVEIL</div>
-              <div class="timeline-role">Développeur Frontend & Data Integration</div>
-            </div>
-            <span class="timeline-period">Mar 2022 – Août 2022</span>
-          </div>
-          <ul class="timeline-desc">
-            <li>Conçu un <strong>système d'information de gestion</strong> en équipe de 5 avec intégration API REST (Laravel) + interface Angular</li>
-            <li>Intégré des <strong>flux de données automatisés</strong> entre backend et UI pour l'affichage en temps réel d'indicateurs métier</li>
+        <div class="timeline-content">
+          <div class="timeline-period">Juin 2020 – Juin 2022</div>
+          <h3 class="timeline-role">Contributeur Data & ML</h3>
+          <div class="timeline-company">eZdia Inc. · USA, Fremont CA</div>
+          <ul class="timeline-tasks">
+            <li>Annotation et recatégorisation de milliers de fiches produits Amazon via CrewMachine</li>
+            <li>Modèles ML de détection d'anomalies dans un pipeline L1 + contrôle qualité L2</li>
+            <li>Ré-entraînement itératif des modèles de classification</li>
           </ul>
-          <div class="timeline-tags">
-            <span class="tag">Angular</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">REST API</span>
-            <span class="tag">Intégration data</span>
-          </div>
         </div>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ==================== COMPÉTENCES ==================== -->
-  <div id="competences">
-    <div class="inner">
-      <section style="padding: 5rem 0; max-width: 1100px; margin: 0 auto;">
-        <span class="section-tag">// compétences</span>
-        <h2 class="section-title">Stack technique</h2>
-        <p class="section-sub">Outils et méthodes utilisés sur des projets réels.</p>
+<!-- ═══════════════════════════════════════
+     SKILLS
+═══════════════════════════════════════ -->
+<section id="skills" class="section skills">
+  <div class="container">
+    <div class="section-tag" data-aos="fade-right">// stack technique</div>
+    <h2 class="section-title" data-aos="fade-up">Compétences<br><span class="gradient-text">techniques</span></h2>
 
-        <div class="skills-grid">
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">Machine Learning</div>
-            <div class="skill-items">
-              <span class="skill-chip hl"><span class="skill-dot"></span>XGBoost</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>Random Forest</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>Logistic Regression</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>LinearSVC</span>
-              <span class="skill-chip"><span class="skill-dot"></span>K-Means</span>
-              <span class="skill-chip"><span class="skill-dot"></span>SMOTE</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Cross-validation</span>
-              <span class="skill-chip"><span class="skill-dot"></span>GridSearchCV</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">NLP & Données textuelles</div>
-            <div class="skill-items">
-              <span class="skill-chip hl"><span class="skill-dot"></span>TF-IDF</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>cleanlab</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>Label Noise Detection</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Regex</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Extraction d'entités</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Classification texte</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">Langages & Librairies</div>
-            <div class="skill-items">
-              <span class="skill-chip hl"><span class="skill-dot"></span>Python</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>SQL</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Pandas</span>
-              <span class="skill-chip"><span class="skill-dot"></span>NumPy</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Matplotlib</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Seaborn</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Scikit-learn</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">Business Intelligence</div>
-            <div class="skill-items">
-              <span class="skill-chip hl"><span class="skill-dot"></span>Power BI</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Google Analytics</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Google Ads</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Meta Ads</span>
-              <span class="skill-chip"><span class="skill-dot"></span>KPIs & Dashboards</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Reporting</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">Évaluation & Méthodologie</div>
-            <div class="skill-items">
-              <span class="skill-chip hl"><span class="skill-dot"></span>ROC / AUC</span>
-              <span class="skill-chip hl"><span class="skill-dot"></span>F1 macro</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Recall / Precision</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Chi² / Cramer V</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Kruskal-Wallis</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Mutual Information</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <div class="skill-cat-title">Environnements & Outils</div>
-            <div class="skill-items">
-              <span class="skill-chip"><span class="skill-dot"></span>Jupyter Notebook</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Google Colab</span>
-              <span class="skill-chip"><span class="skill-dot"></span>Git / GitHub</span>
-              <span class="skill-chip"><span class="skill-dot"></span>VS Code</span>
-              <span class="skill-chip"><span class="skill-dot"></span>GitHub Pages</span>
-            </div>
-          </div>
-
+    <div class="skills-grid">
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="skill-cat-title">Machine Learning</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Classification</span>
+          <span class="skill-tag">Clustering K-Means</span>
+          <span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">SMOTE</span>
+          <span class="skill-tag">Cross-validation</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">Régression Logistique</span>
+          <span class="skill-tag">SVM</span>
         </div>
-      </section>
+      </div>
+
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="skill-cat-title">NLP & Traitement texte</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Label Noise Detection</span>
+          <span class="skill-tag">Classification textuelle</span>
+          <span class="skill-tag">Regex</span>
+          <span class="skill-tag">Extraction d'entités</span>
+          <span class="skill-tag">Pipeline NLP</span>
+        </div>
+      </div>
+
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="skill-cat-title">Data & Visualisation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Seaborn</span>
+          <span class="skill-tag">Google Analytics</span>
+        </div>
+      </div>
+
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="skill-cat-title">Stats & Évaluation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Tests Chi²</span>
+          <span class="skill-tag">Mann-Whitney</span>
+          <span class="skill-tag">AUC / ROC</span>
+          <span class="skill-tag">F1-score</span>
+          <span class="skill-tag">Recall</span>
+          <span class="skill-tag">Corrélations</span>
+        </div>
+      </div>
+
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="skill-cat-title">Dev & Outils</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Jupyter</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Google Colab</span>
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">Angular</span>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- ==================== FORMATION ==================== -->
-  <section id="formation">
-    <span class="section-tag">// formation & certifications</span>
-    <h2 class="section-title">Parcours académique</h2>
+<!-- ═══════════════════════════════════════
+     EDUCATION
+═══════════════════════════════════════ -->
+<section id="education" class="section education">
+  <div class="container">
+    <div class="section-tag" data-aos="fade-right">// formation</div>
+    <h2 class="section-title" data-aos="fade-up">Formation &<br><span class="gradient-text">certifications</span></h2>
 
     <div class="edu-grid">
-
-      <div class="edu-block">
-        <h3>Formation</h3>
-
+      <div class="edu-list" data-aos="fade-right" data-aos-delay="100">
         <div class="edu-item">
-          <div class="edu-degree">Master Data Science & Business Intelligence — RNCP Niv. 7</div>
-          <div class="edu-school">Epitech France — Toulouse</div>
-          <div class="edu-period">2025 → 2027</div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">Licence Professionnelle Génie Logiciel</div>
-          <div class="edu-school">ESTEM — Maroc</div>
-          <div class="edu-period">2021 → 2022</div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">BTS Développement Informatique</div>
-          <div class="edu-school">OFPPT (ISTA) — Maroc</div>
-          <div class="edu-period">2018 → 2020</div>
-        </div>
-      </div>
-
-      <div class="edu-block">
-        <h3>Certifications</h3>
-
-        <div class="cert-item">
-          <span class="cert-badge">🏅</span>
-          <div>
-            <div class="cert-name">Python for Data Science, AI & Development</div>
-            <div class="cert-org">IBM · Mai 2026</div>
+          <div class="edu-year">2025–2027</div>
+          <div class="edu-content">
+            <div class="edu-degree">Master Data Science & Business Intelligence</div>
+            <div class="edu-school">Epitech France · RNCP Niv.7</div>
           </div>
         </div>
-
-        <div class="cert-item">
-          <span class="cert-badge">🏅</span>
-          <div>
-            <div class="cert-name">Google Data Analytics</div>
-            <div class="cert-org">Google · Mai 2026</div>
+        <div class="edu-item">
+          <div class="edu-year">2021–2022</div>
+          <div class="edu-content">
+            <div class="edu-degree">Licence Pro Génie Logiciel</div>
+            <div class="edu-school">ESTEM Maroc</div>
           </div>
         </div>
-
-        <div class="cert-item">
-          <span class="cert-badge">🏅</span>
-          <div>
-            <div class="cert-name">Data Visualization</div>
-            <div class="cert-org">Kaggle · Mai 2026</div>
-          </div>
-        </div>
-
-        <div class="cert-item">
-          <span class="cert-badge">🏅</span>
-          <div>
-            <div class="cert-name">Python</div>
-            <div class="cert-org">Kaggle · Mai 2026</div>
+        <div class="edu-item">
+          <div class="edu-year">2018–2020</div>
+          <div class="edu-content">
+            <div class="edu-degree">BTS Développement Informatique</div>
+            <div class="edu-school">OFPPT (ISTA) Maroc</div>
           </div>
         </div>
       </div>
 
+      <div class="certif-grid" data-aos="fade-left" data-aos-delay="200">
+        <div class="certif-card">
+          <div class="certif-card-logo" style="background:#054ada">IBM</div>
+          <div>
+            <div class="certif-card-name">Python for Data Science, AI & Development</div>
+            <div class="certif-card-org">IBM · Mai 2026</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-card-logo" style="background:#4285f4">G</div>
+          <div>
+            <div class="certif-card-name">Google Data Analytics</div>
+            <div class="certif-card-org">Google · Mai 2026</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-card-logo" style="background:#20beff">K</div>
+          <div>
+            <div class="certif-card-name">Data Visualization</div>
+            <div class="certif-card-org">Kaggle · Mai 2026</div>
+          </div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-card-logo" style="background:#20beff">K</div>
+          <div>
+            <div class="certif-card-name">Python</div>
+            <div class="certif-card-org">Kaggle · Mai 2026</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
-
-  <!-- ==================== CONTACT ==================== -->
-  <section id="contact">
-    <span class="section-tag">// contact</span>
-    <h2 class="section-title">Parlons data</h2>
-    <p class="section-sub" style="margin: 0 auto 0;">
-      Recherche stage immediatement ou une alternance (1j/4j) dès septembre 2026 — Mobile France.
-    </p>
-
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:cedric-enzo.kouokam-kamhoua@epitech.eu">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        cedric-enzo.kouokam-kamhoua@epitech.eu
-      </a>
-      <a class="contact-link" href="https://www.linkedin.com/in/enzo-kamhoua/" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        linkedin.com/in/enzo-kamhoua
-      </a>
-      <a class="contact-link" href="https://github.com/kenzo-kouokam" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        github.com/kenzo-kouokam
-      </a>
+<!-- ═══════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════ -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="contact-inner" data-aos="fade-up">
+      <div class="section-tag">// contact</div>
+      <h2 class="contact-title">Travaillons<br><span class="gradient-text">ensemble</span></h2>
+      <p class="contact-desc">
+        Disponible en alternance (1j/4j) dès septembre 2026.<br>
+        Open aux missions freelance en data science et analytics.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:cedric-enzo.kouokam-kamhoua@epitech.eu" class="contact-btn primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Envoyer un email
+        </a>
+        <a href="https://www.linkedin.com/in/enzo-kamhoua/" target="_blank" rel="noopener" class="contact-btn secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/kenzo-kouokam" target="_blank" rel="noopener" class="contact-btn secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <p class="contact-location">📍 France · 🚘 Permis B · Disponible alternance 1j/4j dès sept. 2026</p>
-  </section>
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-logo">[enzo.ds]</span>
+      <span class="footer-copy">© 2026 Cedric Enzo Kouokam · Portfolio Data Science</span>
+    </div>
+  </div>
+</footer>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer>
-    <span>Cedric Enzo Kouokam</span> — Portfolio Data Science · 2026 ·
-    Conçu avec <span>♥</span> et beaucoup de <span>Python</span>
-  </footer>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
