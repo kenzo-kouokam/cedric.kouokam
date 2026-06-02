@@ -971,6 +971,19 @@ ul { list-style: none; }
   transform: translateY(-2px);
 }
 
+.contact-btn.cv {
+  background: var(--bg-card2);
+  color: var(--accent);
+  border: 1px solid var(--border-accent);
+  font-weight: 700;
+}
+.contact-btn.cv:hover {
+  background: rgba(0, 212, 184, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 212, 184, 0.15);
+}
+
 /* ============================================================
    FOOTER
 ============================================================ */
