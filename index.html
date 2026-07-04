@@ -244,142 +244,156 @@
     <div class="section-tag" data-aos="fade-right">// projets</div>
     <h2 class="section-title" data-aos="fade-up">Projets<br><span class="gradient-text">Data & IA</span></h2>
 
-    <div class="projects-grid">
+      <!-- ── DATA SCIENCE ── -->
+      <div class="projects-sublabel" data-aos="fade-up">
+        <span class="projects-sub-tag">// data science</span>
+      </div>
 
-      <!-- NeoTravel — hero / en production -->
-      <article class="project-card hero-project neotravel-card" data-aos="fade-up" data-aos-delay="60">
-        <div class="project-header">
-          <div class="live-badge">
-            <span class="dot-live"></span> En production
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="50">
+
+        <!-- Projet 1 -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-header">
+            <div class="project-icon">📊</div>
+            <a href="https://github.com/kenzo-kouokam/accidents-velo-prediction" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
           </div>
-          <a href="https://github.com/kenzo-kouokam/neotravel" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">🚌 NeoTravel — Automatisation IA du cycle commercial</h3>
-        <p class="project-desc">Automatisation IA du cycle commercial d'une PME transport de groupe (~60 leads/jour). Contribution principale : <strong>système email complet</strong> — 4 templates HTML, Gmail SMTP + Nodemailer, relances automatiques J+3/J+7 avec idempotence anti-doublon. Stack : n8n AI Agent (GPT-4o-mini) + Airtable CRM (7 tables) + moteur de devis <strong>100 % déterministe</strong> (le prix ne passe jamais par le LLM). Résultat : devis généré et envoyé <strong>en < 5 minutes</strong> sans intervention humaine sur 80 % des cas. Projet MBA1 Epitech — équipe de 5 — soutenance ✅.</p>
-        <div class="project-metrics">
-          <span class="metric highlight">&lt; 5 min · devis auto</span>
-          <span class="metric">4 workflows n8n</span>
-          <span class="metric">7 tables Airtable</span>
-          <span class="metric">~0,01 €/devis IA</span>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">n8n AI Agent</span>
-          <span class="tag">Airtable</span>
-          <span class="tag">Vercel</span>
-          <span class="tag">TypeScript</span>
-        </div>
-        <div class="hero-project-cta">
-          <a href="https://neotravel-projet.vercel.app/" target="_blank" rel="noopener" class="btn-primary small">Voir la démo live →</a>
-          <a href="https://github.com/kenzo-kouokam/neotravel" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
-        </div>
-      </article>
-
-      <!-- Projet Jobster — hero / en production -->
-      <article class="project-card hero-project" data-aos="fade-up" data-aos-delay="80">
-        <div class="project-header">
-          <div class="live-badge">
-            <span class="dot-live"></span> En production
+          <h3 class="project-title">Prédiction gravité accidents vélo</h3>
+          <p class="project-desc">Analyse de <strong>80 022 accidents cyclistes</strong> (France 2005–2023). Construction de 11 variables métier, gestion du déséquilibre via SMOTE, comparaison de 4 modèles de classification.</p>
+          <div class="project-metrics">
+            <span class="metric">80k+ lignes</span>
+            <span class="metric">SMOTE +23%</span>
+            <span class="metric">Chi²=2569</span>
           </div>
-          <a href="https://github.com/kenzo-kouokam/jobster" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">🤖 Jobster — Agent IA de recherche d'emploi</h3>
-        <p class="project-desc">Backend FastAPI (<strong>16 endpoints</strong>) d'un agent IA orchestrant 8 outils — recherche d'offres temps réel, scoring de matching CV/offre, génération de lettres de motivation (.docx) — avec un <strong>LLM local Ollama/Qwen3</strong> pour le routing d'intention. <strong>Reverse-engineering de 2 API publiques</strong> (La Bonne Boîte, Mes Événements Emploi) par interception réseau Playwright pour contourner des scopes indisponibles — 98 entreprises et 372 événements intégrés en production. Projet d'équipe de 4 (Epitech), puis repris et déployé en solo.</p>
-        <div class="project-metrics">
-          <span class="metric highlight">98 entreprises</span>
-          <span class="metric">372 événements</span>
-          <span class="metric">16 endpoints API</span>
-          <span class="metric">8 outils IA</span>
-        </div>
-        <div class="project-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">Ollama · Qwen3</span>
-          <span class="tag">React</span>
-          <span class="tag">Playwright</span>
-          <span class="tag">Reverse Engineering</span>
-          <span class="tag">SQLite</span>
-        </div>
-        <div class="hero-project-cta">
-          <a href="https://jobster-psi.vercel.app" target="_blank" rel="noopener" class="btn-primary small">Voir la démo live →</a>
-          <a href="https://github.com/kenzo-kouokam/jobster" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
-        </div>
-      </article>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">SMOTE</span>
+          </div>
+        </article>
 
-      <!-- Projet 1 -->
-      <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-header">
-          <div class="project-icon">📊</div>
-          <a href="https://github.com/kenzo-kouokam/accidents-velo-prediction" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">Prédiction gravité accidents vélo</h3>
-        <p class="project-desc">Analyse de <strong>80 022 accidents cyclistes</strong> (France 2005–2023). Construction de 11 variables métier, gestion du déséquilibre via SMOTE, comparaison de 4 modèles de classification.</p>
-        <div class="project-metrics">
-          <span class="metric">80k+ lignes</span>
-          <span class="metric">SMOTE +23%</span>
-          <span class="metric">Chi²=2569</span>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">XGBoost</span>
-          <span class="tag">scikit-learn</span>
-          <span class="tag">SMOTE</span>
-        </div>
-      </article>
+        <!-- Projet 2 (featured) -->
+        <article class="project-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="featured-badge">Best AUC</div>
+          <div class="project-header">
+            <div class="project-icon">🏦</div>
+            <a href="https://github.com/kenzo-kouokam/bank-marketing-ml" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">Modélisation prédictive — Campagne marketing bancaire</h3>
+          <p class="project-desc">Optimisation du ciblage d'une campagne téléphonique bancaire sur <strong>45 211 clients</strong>. Segmentation K-Means : cluster prioritaire à 19% de conversion (×2 la moyenne).</p>
+          <div class="project-metrics">
+            <span class="metric highlight">AUC 0.76</span>
+            <span class="metric">45k clients</span>
+            <span class="metric">×2 conversion</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">K-Means</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Random Forest</span>
+          </div>
+        </article>
 
-      <!-- Projet 2 (featured) -->
-      <article class="project-card featured" data-aos="fade-up" data-aos-delay="300">
-        <div class="featured-badge">Best AUC</div>
-        <div class="project-header">
-          <div class="project-icon">🏦</div>
-          <a href="https://github.com/kenzo-kouokam/bank-marketing-ml" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">Modélisation prédictive — Campagne marketing bancaire</h3>
-        <p class="project-desc">Optimisation du ciblage d'une campagne téléphonique bancaire sur <strong>45 211 clients</strong>. Segmentation K-Means : cluster prioritaire à 19% de conversion (×2 la moyenne).</p>
-        <div class="project-metrics">
-          <span class="metric highlight">AUC 0.76</span>
-          <span class="metric">45k clients</span>
-          <span class="metric">×2 conversion</span>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">K-Means</span>
-          <span class="tag">XGBoost</span>
-          <span class="tag">Random Forest</span>
-        </div>
-      </article>
+        <!-- Projet 3 -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-header">
+            <div class="project-icon">🛋️</div>
+            <a href="https://github.com/kenzo-kouokam/Ecommerce_Categorisation_Dimensions_Couleurs" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">Label noise & recatégorisation e-commerce NLP</h3>
+          <p class="project-desc">Pipeline NLP pour détecter et corriger des milliers de produits mal étiquetés sur une marketplace ameublement. Extraction automatique de dimensions et couleurs depuis les descriptions.</p>
+          <div class="project-metrics">
+            <span class="metric">NLP Pipeline</span>
+            <span class="metric">Regex</span>
+            <span class="metric">Multi-class</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">NLP</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Regex</span>
+            <span class="tag">Python</span>
+          </div>
+        </article>
 
-      <!-- Projet 3 -->
-      <article class="project-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="project-header">
-          <div class="project-icon">🛋️</div>
-          <a href="https://github.com/kenzo-kouokam/Ecommerce_Categorisation_Dimensions_Couleurs" target="_blank" rel="noopener" class="project-link" aria-label="Voir sur GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">Label noise & recatégorisation e-commerce NLP</h3>
-        <p class="project-desc">Pipeline NLP pour détecter et corriger des milliers de produits mal étiquetés sur une marketplace ameublement. Extraction automatique de dimensions et couleurs depuis les descriptions.</p>
-        <div class="project-metrics">
-          <span class="metric">NLP Pipeline</span>
-          <span class="metric">Regex</span>
-          <span class="metric">Multi-class</span>
-        </div>
-        <div class="project-tags">
-          <span class="tag">NLP</span>
-          <span class="tag">scikit-learn</span>
-          <span class="tag">Regex</span>
-          <span class="tag">Python</span>
-        </div>
-      </article>
+      </div><!-- /projects-grid data science -->
 
-    </div>
+      <!-- ── IA & AUTOMATISATION ── -->
+      <div class="projects-sublabel" data-aos="fade-up">
+        <span class="projects-sub-tag">// ia & automatisation</span>
+      </div>
+
+      <div class="projects-grid projects-grid--ia">
+
+        <!-- Projet Jobster -->
+        <article class="project-card ia-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-header">
+            <div class="live-badge">
+              <span class="dot-live"></span> En production
+            </div>
+            <a href="https://github.com/kenzo-kouokam/jobster" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">🤖 Jobster — Agent IA de recherche d'emploi</h3>
+          <p class="project-desc">Backend FastAPI (<strong>16 endpoints</strong>) d'un agent IA orchestrant 8 outils — recherche d'offres temps réel, scoring de matching CV/offre, génération de lettres de motivation (.docx) — avec un <strong>LLM local Ollama/Qwen3</strong> pour le routing d'intention. <strong>Reverse-engineering de 2 API publiques</strong> (La Bonne Boîte, Mes Événements Emploi) par interception réseau Playwright — 98 entreprises et 372 événements intégrés en production. Équipe de 4 (Epitech), puis déployé en solo.</p>
+          <div class="project-metrics">
+            <span class="metric highlight">98 entreprises</span>
+            <span class="metric">372 événements</span>
+            <span class="metric">16 endpoints API</span>
+            <span class="metric">8 outils IA</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Ollama · Qwen3</span>
+            <span class="tag">React</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Reverse Engineering</span>
+            <span class="tag">SQLite</span>
+          </div>
+          <div class="hero-project-cta">
+            <a href="https://jobster-psi.vercel.app" target="_blank" rel="noopener" class="btn-primary small">Voir la démo live →</a>
+            <a href="https://github.com/kenzo-kouokam/jobster" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
+          </div>
+        </article>
+
+        <!-- NeoTravel -->
+        <article class="project-card ia-card neotravel-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-header">
+            <div class="live-badge">
+              <span class="dot-live"></span> En production
+            </div>
+            <a href="https://github.com/kenzo-kouokam/neotravel" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">🚌 NeoTravel — Automatisation IA du cycle commercial</h3>
+          <p class="project-desc">Automatisation IA du cycle commercial d'une PME transport de groupe (~60 leads/jour). Contribution principale : <strong>système email complet</strong> — 4 templates HTML, Gmail SMTP + Nodemailer, relances automatiques J+3/J+7 avec idempotence anti-doublon. Stack : n8n AI Agent (GPT-4o-mini) + Airtable CRM (7 tables) + moteur de devis <strong>100 % déterministe</strong>. Résultat : devis envoyé <strong>en &lt; 5 minutes</strong> sans intervention humaine sur 80 % des cas. Équipe de 5 — soutenance ✅.</p>
+          <div class="project-metrics">
+            <span class="metric highlight">&lt; 5 min · devis auto</span>
+            <span class="metric">4 workflows n8n</span>
+            <span class="metric">7 tables Airtable</span>
+            <span class="metric">~0,01 €/devis IA</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">n8n AI Agent</span>
+            <span class="tag">Airtable</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">TypeScript</span>
+          </div>
+          <div class="hero-project-cta">
+            <a href="https://neotravel-projet.vercel.app/" target="_blank" rel="noopener" class="btn-primary small">Voir la démo live →</a>
+            <a href="https://github.com/kenzo-kouokam/neotravel" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid ia -->
   </div>
 </section>
 
