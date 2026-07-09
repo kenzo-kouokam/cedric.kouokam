@@ -1,7 +1,7 @@
 
 #  Cedric Enzo  KOUOKAM KAMHOUA   
 
-## **Data Scientist** · Master Data Science & B.I à Epitech
+## **Data Scientist & IA** · Master Data Science & B.I à Epitech
 
 💼 [LinkedIn](https://www.linkedin.com/in/enzo-kamhoua/) · 🖥️ [GitHub](https://github.com/kenzo-kouokam) · 📧 [Email](mailto:cedric-enzo.kouokam-kamhoua@epitech.eu)
 
@@ -11,8 +11,8 @@
 
 ## 🎯 Profil
 
-Parcours hybride **Génie Logiciel → Data Science**, je maîtrise Python, SQL et Power BI avec une expérience concrète en traitement, modélisation et visualisation de données.  
-Je construis des solutions data à forte valeur métier : des pipelines ML sur des datasets réels aux dashboards de performance opérationnelle.
+Parcours hybride **Génie Logiciel → Data Science & IA**, je maîtrise l'ensemble de la chaîne data : de la collecte et du nettoyage jusqu'à la modélisation ML, la restitution en dashboard — et l'**automatisation de bout en bout** via des agents IA et workflows no-code.  
+Je construis des solutions à forte valeur métier — des pipelines ML sur datasets réels aux recommandations business concrètes, jusqu'aux systèmes autonomes qui éliminent les tâches répétitives à zéro intervention humaine.
 
 ---
 
@@ -65,17 +65,61 @@ Je construis des solutions data à forte valeur métier : des pipelines ML sur d
 
 ---
 
+## 🤖 Projets IA & Automatisation
+
+### ⚡ Jobster — Agent IA de recherche d'emploi · [Demo](https://jobster-psi.vercel.app) · [Code](https://github.com/kenzo-kouokam/jobster)
+> `FastAPI` · `Ollama / Qwen3` · `React` · `Playwright` · `SQLite`
+
+- Backend FastAPI **16 endpoints** · LLM local Qwen3 via Ollama pour routing d'intention
+- **Reverse-engineering** La Bonne Boîte + Mes Événements Emploi (Playwright + interception réseau)
+- 8 outils IA orchestrés : recherche offres temps réel, scoring CV, génération lettres .docx, suivi candidatures
+- **98 entreprises + 372 événements** intégrés en production · projet équipe Epitech, déployé en solo
+
+---
+
+### 🌐 NeoTravel — Automatisation IA cycle commercial · [Demo](https://neotravel-projet.vercel.app/) · [Code](https://github.com/kenzo-kouokam/neotravel)
+> `n8n` · `GPT-4o-mini` · `Next.js` · `Airtable` · `Nodemailer`
+
+- Pipeline IA end-to-end : chatbot qualificatif → devis auto < 5 min → email PDF → relances J+3/J+7
+- 4 workflows n8n · 7 tables Airtable · **~0,01 €/devis IA** · coût total 25–35 €/mois
+- **Rôle P5 (Enzo)** : 4 templates HTML email, Gmail SMTP + Nodemailer, idempotence anti-doublon
+- ROI estimé : 17 617 €/mois marge additionnelle · break-even à 1 prestation (217 € marge nette)
+
+---
+
+## 📊 Data Engineering & BI
+
+### ✈️ Satisfaction Client Airline — Dashboard BI · [Dashboard live](https://satisfaction-client-airline.streamlit.app/) · [Code](https://github.com/kenzo-kouokam/airline-satisfaction-ml)
+> `scikit-learn` · `KNN` · `Streamlit` · `Plotly` · `Python`
+
+**Mission de consulting BI** (cadre académique Epitech) pour une compagnie aérienne fictive :
+
+- Pipeline ML complet sur **129 880 passagers** — EDA (Chi², Mann-Whitney), feature engineering, 2 modèles comparés
+- **KNN retenu** (k=11, distance) : **93.1% accuracy · AUC 0.98** · variable star : `loyal_business` (corrélation 0.56)
+- **Dashboard Streamlit 5 pages** déployé sur Streamlit Cloud :
+  - Vue d'ensemble · Facteurs de satisfaction · Performance des modèles · Simulateur de risque · Recommandations
+- Livrables consulting : notebook bilingue (FR/EN), rapport 10 pages, présentation 14 slides
+
+---
+
+### 🏭 Pipeline PME — Scraping → CRM automatisé · [Code](https://github.com/kenzo-kouokam/pme-candidature-pipeline)
+> `Python` · `Scraping multi-sources` · `Notion API` · `ETL` · `Pandas`
+
+- Pipeline data engineering end-to-end : scraping → enrichissement → scoring → génération → CRM
+- **656 PMEs scrapées** sur 5 verticaux et 12 codes NAF, dédupliquées et scorées
+- **211 lettres de motivation personnalisées** générées automatiquement avec LLM
+- Résultats versés dans un **CRM Notion** via API — zéro intervention manuelle
+
+---
+
 ## 💼 Expériences Professionnelles
 
 ### 🇺🇸 eZdia Inc. (USA, Fremont CA) — Contributeur Data & ML
 **Freelance | Juin 2020 – Juin 2022**
 
-eZdia est une société spécialisée en **optimisation de contenu e-commerce et annotation de données** pour les grandes marketplaces (Amazon).
-
-- Annoté et recatégorisé des milliers de **fiches produits Amazon** via la plateforme CrewMachine, selon des taxonomies de catégories strictes
-- Développé des **modèles ML de détection d'anomalies** (articles mal référencés/catégorisés) intégrés dans un pipeline de correction à 2 niveaux (L1 + contrôle qualité L2 sur 20% d'échantillon journalier)
-- Contribué au **ré-entraînement itératif des modèles** de classification pour améliorer la précision de détection
-- Refonte des **critères descriptifs et bullet points produits** pour optimiser le SEO et la catégorisation macro marketplace
+- Annoté et recatégorisé des milliers de **fiches produits Amazon** via CrewMachine, selon taxonomies strictes
+- Développé des **modèles ML de détection d'anomalies** (pipeline correction L1 + contrôle qualité L2 sur 20% d'échantillon)
+- Contribué au **ré-entraînement itératif** des modèles de classification
 
 ---
 
@@ -84,16 +128,14 @@ eZdia est une société spécialisée en **optimisation de contenu e-commerce et
 
 - Analysé les **données de performance marketing** de 5 marques sur Google Ads, Meta Ads et SEO
 - Produit des dashboards de suivi en temps réel pour ajustement continu des campagnes
-- Collecté, nettoyé et structuré les données multi-plateformes pour des **reportings hebdomadaires**
 
 ---
 
 ### 📈 MYBOSA — Spécialiste Data & Growth Digital
 **Septembre 2022 – Décembre 2023**
 
-- Mis en place et suivi des **KPIs de croissance** multi-réseaux sociaux → **+213% croissance communauté, ×20 engagement**
-- Structuré et coordonné une **équipe internationale de 20 personnes** (Maghreb / Afrique subsaharienne)
-- Analysé les données d'engagement pour orienter la ligne éditoriale et maximiser la portée organique
+- Mis en place et suivi des **KPIs de croissance** → **+213% communauté, ×20 engagement**
+- Coordonné une **équipe internationale de 20 personnes** (Maghreb / Afrique subsaharienne)
 
 ---
 
@@ -101,47 +143,30 @@ eZdia est une société spécialisée en **optimisation de contenu e-commerce et
 **Septembre 2023 – Décembre 2025**
 
 - Conçu et déployé des **tableaux de bord de performance** (KPIs, taux de conversion, ROI) pour 3 clients
-- Piloté l'analyse des données marketing multi-plateformes (Google Analytics, Meta Ads)
-- Livré 3 missions intégrant collecte, traitement et restitution de données de performance digitale
+- 3 missions intégrant collecte, traitement et restitution de données de performance digitale
 
 ---
 
 ### ⚙️ SOLVEIL — Développeur Frontend & Data Integration
 **Mars 2022 – Août 2022**
 
-- Conçu un **système d'information de gestion** (équipe de 5) avec intégration API REST (Laravel) + interface Angular
-- Intégré des flux de données entre backend et UI pour automatiser l'affichage d'indicateurs métier
+- Conçu un **SIG** (équipe de 5) avec intégration API REST (Laravel) + interface Angular
 
 ---
 
-## 🛠️ Compétences Techniques
-
-### Data Science & Machine Learning
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-0171BA?style=flat-square&logo=xgboost&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+## 🛠️ Compétences Techniques (9 domaines)
 
 | Domaine | Compétences |
 |---|---|
-| **Machine Learning** | Classification, Clustering (K-Means), Feature Engineering, SMOTE, Cross-validation |
-| **Modèles** | XGBoost, Random Forest, Régression Logistique, SVM |
-| **NLP** | Extraction d'entités, Regex, Classification textuelle, Label Noise Detection |
-| **Visualisation** | Matplotlib, Seaborn, Power BI |
-| **Stats** | Tests Chi², Mann-Whitney, Corrélations, AUC/ROC, F1-score, Recall |
-
-### Data & BI
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
-![Google Analytics](https://img.shields.io/badge/Google_Analytics-E37400?style=flat-square&logo=googleanalytics&logoColor=white)
-
-### Dev & Outils
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
-![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=black)
+| **Machine Learning** | scikit-learn, XGBoost, Random Forest, KNN, SVM, K-Means, SMOTE, LR, Feature Engineering, GridSearchCV, Optimisation seuil, Cross-validation, cleanlab |
+| **NLP & Analyse texte** | TF-IDF, Label Noise Detection, Classification textuelle, Regex, Extraction d'entités, Pipeline NLP, Génération LM personnalisée, Scoring qualité texte |
+| **IA & Automatisation** | Agents IA, LLM (Claude·GPT·Qwen3), Groq·Ollama, n8n, Make·Zapier, Prompt Engineering, Reverse Engineering API, Playwright, Scraping web, CRM automation |
+| **Analyse de données** | EDA, KPI, Feature Engineering, Segmentation clients, Analyse de satisfaction, Chi²·Mann-Whitney, AUC/ROC·F1·Recall |
+| **BI & Visualisation** | Power BI, DAX, Tableau, Streamlit, Plotly, Dashboards déployés, Matplotlib, Seaborn, Google Analytics, Excel·VBA, SAS |
+| **Bases de données** | SQL (MySQL·Oracle·SQLite), NoSQL (MongoDB), Notion API, Modélisation, Airtable |
+| **Data Engineering** | ETL, Web scraping multi-sources, Enrichissement données, Déduplication, Scoring & filtrage, Automatisation, Contrôle qualité |
+| **Dev & Outils** | Python, JS·TS, React·Next.js, FastAPI, Streamlit, HTML·CSS, Angular, Git·GitHub, Jupyter·VS Code·Cursor, Agile/Scrum |
+| **Consulting & Communication** | Rapports de consulting, Recommandations business, Présentation orale, Docs de passation, Vulgarisation Data, Formation équipes |
 
 ---
 
@@ -179,5 +204,5 @@ eZdia est une société spécialisée en **optimisation de contenu e-commerce et
 ---
 
 <div align="center">
-<em>Portfolio Data Science — Enzo KOUOKAM · 2026</em>
+<em>Portfolio Data Science & IA — Enzo KOUOKAM · 2026</em>
 </div>
