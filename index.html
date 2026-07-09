@@ -184,8 +184,8 @@
 
     <div class="about-grid">
       <div class="about-text" data-aos="fade-right" data-aos-delay="100">
-        <p>Parcours hybride <strong>Génie Logiciel → Data Science</strong>, je maîtrise l'ensemble de la chaîne data : de la collecte et du nettoyage jusqu'à la modélisation ML et la restitution en dashboard.</p>
-        <p>Je construis des solutions à forte valeur métier — des pipelines ML sur datasets réels aux recommandations business concrètes basées sur les données.</p>
+        <p>Parcours hybride <strong>Génie Logiciel → Data Science & IA</strong>, je maîtrise l'ensemble de la chaîne data : de la collecte et du nettoyage jusqu'à la modélisation ML, la restitution en dashboard — et l'<strong>automatisation de bout en bout</strong> via des agents IA et workflows no-code.</p>
+        <p>Je construis des solutions à forte valeur métier — des pipelines ML sur datasets réels aux recommandations business concrètes, jusqu'aux systèmes autonomes qui éliminent les tâches répétitives à zéro intervention humaine.</p>
         <div class="about-meta">
           <div class="meta-item">
             <span class="meta-icon">📍</span>
@@ -394,6 +394,74 @@
         </article>
 
       </div><!-- /projects-grid ia -->
+
+      <!-- ── DATA ENGINEERING & BI ── -->
+      <div class="projects-sublabel" data-aos="fade-up">
+        <span class="projects-sub-tag">// data engineering & bi</span>
+      </div>
+
+      <div class="projects-grid projects-grid--ia">
+
+        <!-- Satisfaction Client Airline -->
+        <article class="project-card ia-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-header">
+            <div class="live-badge">
+              <span class="dot-live"></span> En production
+            </div>
+            <a href="https://github.com/kenzo-kouokam/airline-satisfaction-ml" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">📊 Satisfaction Client Airline — Dashboard BI</h3>
+          <p class="project-desc">Pipeline ML complet sur <strong>129 880 passagers</strong>. Identification des drivers de satisfaction : fidélité × type de voyage = <strong>48 pts d'écart</strong> — facteur le plus discriminant du dataset. Deux modèles comparés (LR vs KNN, <strong>AUC 0.98</strong>). Dashboard Streamlit 5 pages déployé : KPIs live, courbes ROC interactives, simulateur de risque passager avec contributions locales, recommandations exécutives.</p>
+          <div class="project-metrics">
+            <span class="metric highlight">AUC 0.98 · 93.1 % acc.</span>
+            <span class="metric">129k passagers</span>
+            <span class="metric">5 pages BI</span>
+            <span class="metric">Streamlit Cloud</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">KNN</span>
+            <span class="tag">Python</span>
+          </div>
+          <div class="hero-project-cta">
+            <a href="https://satisfaction-client-airline.streamlit.app/" target="_blank" rel="noopener" class="btn-primary small">Voir le dashboard →</a>
+            <a href="https://github.com/kenzo-kouokam/airline-satisfaction-ml" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
+          </div>
+        </article>
+
+        <!-- PME Pipeline -->
+        <article class="project-card ia-card pme-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-header">
+            <div class="pipeline-badge">⚙ Pipeline data</div>
+            <a href="https://github.com/kenzo-kouokam/pme-candidature-pipeline" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">🏭 Pipeline PME — Scraping → CRM automatisé</h3>
+          <p class="project-desc">Pipeline end-to-end de prospection data-driven : scraping multi-sources (API gouvernementale, PagesJaunes, Kompass) → enrichissement URL / email / page carrière → scoring qualité A/B/C/D → génération automatique de <strong>211 lettres de motivation</strong> personnalisées par vertical métier (ESN, BI/Conseil, Fintech, Retail, Startup) → push Notion CRM avec suivi statuts temps réel. <strong>Zéro intervention manuelle</strong> de la collecte au CRM.</p>
+          <div class="project-metrics">
+            <span class="metric highlight">656 PMEs scrapées</span>
+            <span class="metric">211 LMs générées</span>
+            <span class="metric">5 verticaux</span>
+            <span class="metric">12 codes NAF</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scraping multi-sources</span>
+            <span class="tag">Notion API</span>
+            <span class="tag">ETL</span>
+            <span class="tag">Pandas</span>
+          </div>
+          <div class="hero-project-cta">
+            <a href="https://github.com/kenzo-kouokam/pme-candidature-pipeline" target="_blank" rel="noopener" class="btn-secondary small">Code source</a>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid de&bi -->
   </div>
 </section>
 
@@ -495,11 +563,14 @@
           <span class="skill-tag">scikit-learn</span>
           <span class="skill-tag">XGBoost</span>
           <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">KNN</span>
           <span class="skill-tag">SVM</span>
           <span class="skill-tag">K-Means</span>
           <span class="skill-tag">SMOTE</span>
           <span class="skill-tag">Régression Logistique</span>
           <span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">GridSearchCV</span>
+          <span class="skill-tag">Optimisation seuil</span>
           <span class="skill-tag">Cross-validation</span>
           <span class="skill-tag">cleanlab</span>
         </div>
@@ -514,6 +585,8 @@
           <span class="skill-tag">Regex</span>
           <span class="skill-tag">Extraction d'entités</span>
           <span class="skill-tag">Pipeline NLP</span>
+          <span class="skill-tag">Génération LM personnalisée</span>
+          <span class="skill-tag">Scoring qualité texte</span>
           <span class="skill-tag">Contrôle qualité</span>
         </div>
       </div>
@@ -529,6 +602,8 @@
           <span class="skill-tag">Prompt Engineering</span>
           <span class="skill-tag">Reverse Engineering API</span>
           <span class="skill-tag">Playwright</span>
+          <span class="skill-tag">Scraping web</span>
+          <span class="skill-tag">CRM automation</span>
           <span class="skill-tag">Workflows IA</span>
         </div>
       </div>
@@ -540,6 +615,8 @@
           <span class="skill-tag">KPI</span>
           <span class="skill-tag">Préparation de données</span>
           <span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">Segmentation clients</span>
+          <span class="skill-tag">Analyse de satisfaction</span>
           <span class="skill-tag">Études quantitatives</span>
           <span class="skill-tag">Aide à la décision</span>
           <span class="skill-tag">Chi² · Mann-Whitney</span>
@@ -553,6 +630,9 @@
           <span class="skill-tag">Power BI</span>
           <span class="skill-tag">DAX</span>
           <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">Plotly</span>
+          <span class="skill-tag">Dashboards déployés</span>
           <span class="skill-tag">Matplotlib</span>
           <span class="skill-tag">Seaborn</span>
           <span class="skill-tag">Google Analytics</span>
@@ -567,6 +647,7 @@
         <div class="skill-tags">
           <span class="skill-tag">SQL (MySQL · Oracle · SQLite)</span>
           <span class="skill-tag">NoSQL (MongoDB)</span>
+          <span class="skill-tag">Notion API</span>
           <span class="skill-tag">Modélisation de données</span>
           <span class="skill-tag">Optimisation de requêtes</span>
           <span class="skill-tag">Airtable</span>
@@ -577,6 +658,10 @@
         <h3 class="skill-cat-title">Data Engineering</h3>
         <div class="skill-tags">
           <span class="skill-tag">ETL</span>
+          <span class="skill-tag">Web scraping multi-sources</span>
+          <span class="skill-tag">Enrichissement données</span>
+          <span class="skill-tag">Déduplication</span>
+          <span class="skill-tag">Scoring & filtrage</span>
           <span class="skill-tag">Ingestion de données</span>
           <span class="skill-tag">Transformation</span>
           <span class="skill-tag">Automatisation</span>
@@ -593,12 +678,26 @@
           <span class="skill-tag">JavaScript · TypeScript</span>
           <span class="skill-tag">React · Next.js</span>
           <span class="skill-tag">FastAPI · API REST</span>
+          <span class="skill-tag">Streamlit</span>
           <span class="skill-tag">HTML · CSS</span>
           <span class="skill-tag">Angular</span>
           <span class="skill-tag">Git · GitHub</span>
           <span class="skill-tag">Jupyter · VS Code · Cursor</span>
           <span class="skill-tag">Agile / Scrum</span>
           <span class="skill-tag">Notion · Suite Office</span>
+        </div>
+      </div>
+
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="skill-cat-title">Consulting & Communication</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Rapports de consulting</span>
+          <span class="skill-tag">Recommandations business</span>
+          <span class="skill-tag">Présentation orale</span>
+          <span class="skill-tag">Docs de passation</span>
+          <span class="skill-tag">Vulgarisation Data</span>
+          <span class="skill-tag">Formation équipes</span>
+          <span class="skill-tag">Communication non-tech</span>
         </div>
       </div>
 
