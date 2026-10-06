@@ -85,6 +85,15 @@ Je construis des solutions à forte valeur métier — des pipelines ML sur data
 - **Rôle P5 (Enzo)** : 4 templates HTML email, Gmail SMTP + Nodemailer, idempotence anti-doublon
 - ROI estimé : 17 617 €/mois marge additionnelle · break-even à 1 prestation (217 € marge nette)
 
+### 🩺 Relève — Automatisation d'une agence d'intérim santé · [Démo](https://github.com/kenzo-kouokam/releve#️-démo) · [Code](https://github.com/kenzo-kouokam/releve)
+> `n8n` · `Webhooks HMAC` · `Slack API` · `Airtable` · `Redis` · `NestJS` · `Nuxt` · `Docker`
+
+- Agence d'intérim numérique pour aides-soignants en EHPAD — équipe de 5 (Epitech), 11 jours, démonstration en direct
+- **Rôle Data analyst (Enzo) : toute l'automatisation** — 3 workflows n8n (57 nœuds) déclenchés par des webhooks signés HMAC
+- Alertes urgentes plafonnées à 3/jour (compteurs Redis) · relances avec escalade humaine · confirmation de mission · suivi Slack · journal Airtable non bloquant
+- **RGPD** : aucune donnée nominative vers les services tiers (références pseudonymes), correctif d'une fuite de données dans l'API
+- Testé en coupant volontairement l'API · cahier des charges (93 exigences) et chiffrage (48 jours-homme)
+
 ---
 
 ## 📊 Data Engineering & BI
@@ -154,19 +163,20 @@ Je construis des solutions à forte valeur métier — des pipelines ML sur data
 
 ---
 
-## 🛠️ Compétences Techniques (9 domaines)
+## 🛠️ Compétences Techniques (10 domaines)
 
 | Domaine | Compétences |
 |---|---|
 | **Machine Learning** | scikit-learn, XGBoost, Random Forest, KNN, SVM, K-Means, SMOTE, LR, Feature Engineering, GridSearchCV, Optimisation seuil, Cross-validation, cleanlab |
 | **NLP & Analyse texte** | TF-IDF, Label Noise Detection, Classification textuelle, Regex, Extraction d'entités, Pipeline NLP, Génération LM personnalisée, Scoring qualité texte |
-| **IA & Automatisation** | Agents IA, LLM (Claude·GPT·Qwen3), Groq·Ollama, n8n, Make·Zapier, Prompt Engineering, Reverse Engineering API, Playwright, Scraping web, CRM automation |
+| **IA & Automatisation** | Agents IA, LLM (Claude·GPT·Qwen3), Groq·Ollama, n8n, Make·Zapier, Prompt Engineering, Reverse Engineering API, Playwright, Scraping web, CRM automation, Webhooks signés (HMAC), Orchestration événementielle, Slack API |
 | **Analyse de données** | EDA, KPI, Feature Engineering, Segmentation clients, Analyse de satisfaction, Chi²·Mann-Whitney, AUC/ROC·F1·Recall |
 | **BI & Visualisation** | Power BI, DAX, Tableau, Streamlit, Plotly, Dashboards déployés, Matplotlib, Seaborn, Google Analytics, Excel·VBA, SAS |
-| **Bases de données** | SQL (MySQL·Oracle·SQLite), NoSQL (MongoDB), Notion API, Modélisation, Airtable |
+| **Bases de données** | SQL (MySQL·Oracle·SQLite), NoSQL (MongoDB), Notion API, Modélisation, Airtable, PostgreSQL·PostGIS, Redis |
 | **Data Engineering** | ETL, Web scraping multi-sources, Enrichissement données, Déduplication, Scoring & filtrage, Automatisation, Contrôle qualité |
-| **Dev & Outils** | Python, JS·TS, React·Next.js, FastAPI, Streamlit, HTML·CSS, Angular, Git·GitHub, Jupyter·VS Code·Cursor, Agile/Scrum |
-| **Consulting & Communication** | Rapports de consulting, Recommandations business, Présentation orale, Docs de passation, Vulgarisation Data, Formation équipes |
+| **Dev & Outils** | Python, JS·TS, React·Next.js, FastAPI, Streamlit, HTML·CSS, Angular, Git·GitHub, Jupyter·VS Code·Cursor, Agile/Scrum, Docker·Compose, NestJS·Nuxt, pnpm·Monorepo |
+| **Consulting & Communication** | Rapports de consulting, Recommandations business, Présentation orale, Docs de passation, Vulgarisation Data, Formation équipes, Cahier des charges, Chiffrage jours-homme, Analyse concurrentielle, Démo client en direct |
+| **Sécurité & Conformité** | RGPD, Minimisation·Pseudonymisation, Sous-traitants hors UE, HMAC SHA-256, Gestion des secrets, Jetons de service, Tests de panne, Droit de l'intérim (loi Valletoux) |
 
 ---
 
