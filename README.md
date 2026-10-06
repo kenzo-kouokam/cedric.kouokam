@@ -88,7 +88,7 @@ Je construis des solutions à forte valeur métier — des pipelines ML sur data
 ### 🩺 Relève — Automatisation d'une agence d'intérim santé · [Démo](https://github.com/kenzo-kouokam/releve#️-démo) · [Code](https://github.com/kenzo-kouokam/releve)
 > `n8n` · `Webhooks HMAC` · `Slack API` · `Airtable` · `Redis` · `NestJS` · `Nuxt` · `Docker`
 
-- Agence d'intérim numérique pour aides-soignants en EHPAD — équipe de 5 (Epitech), 11 jours, démonstration en direct
+- Agence d'intérim numérique pour aides-soignants en EHPAD — équipe de 5, 11 jours, démonstration en direct
 - **Rôle Data analyst (Enzo) : toute l'automatisation** — 3 workflows n8n (57 nœuds) déclenchés par des webhooks signés HMAC
 - Alertes urgentes plafonnées à 3/jour (compteurs Redis) · relances avec escalade humaine · confirmation de mission · suivi Slack · journal Airtable non bloquant
 - **RGPD** : aucune donnée nominative vers les services tiers (références pseudonymes), correctif d'une fuite de données dans l'API
